@@ -275,12 +275,13 @@ export default function TextEditor({
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Text Content
                 </label>
-                <textarea
-                  value={selectedText.text}
-                  onChange={(e) => updateTextContent(e.target.value)}
-                  className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  rows={3}
-                />
+                                 <textarea
+                   value={selectedText.text}
+                   onChange={(e) => updateTextContent(e.target.value)}
+                   className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent text-black placeholder-black"
+                   rows={3}
+                   placeholder="Enter your text here..."
+                 />
               </div>
 
               {/* Font Family */}
@@ -288,11 +289,11 @@ export default function TextEditor({
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Font Family
                 </label>
-                <select
-                  value={selectedText.fontFamily}
-                  onChange={(e) => updateTextStyle('fontFamily', e.target.value)}
-                  className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                >
+                                 <select
+                   value={selectedText.fontFamily}
+                   onChange={(e) => updateTextStyle('fontFamily', e.target.value)}
+                   className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent text-black"
+                 >
                   {fontFamilies.map(font => (
                     <option key={font} value={font}>{font}</option>
                   ))}
@@ -304,11 +305,11 @@ export default function TextEditor({
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Font Size
                 </label>
-                <select
-                  value={selectedText.fontSize}
-                  onChange={(e) => updateTextStyle('fontSize', parseInt(e.target.value))}
-                  className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                >
+                                 <select
+                   value={selectedText.fontSize}
+                   onChange={(e) => updateTextStyle('fontSize', parseInt(e.target.value))}
+                   className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent text-black"
+                 >
                   {fontSizes.map(size => (
                     <option key={size} value={size}>{size}px</option>
                   ))}
@@ -428,7 +429,7 @@ export default function TextEditor({
                      onChange={(e) => selectedId && updateTextTransform(selectedId, { rotation: parseInt(e.target.value) })}
                      className="flex-1"
                    />
-                   <span className="text-sm text-gray-500 w-12 text-right">{selectedText.rotation}°</span>
+                                       <span className="text-sm text-gray-500 w-16 text-right">{selectedText.rotation.toFixed(2)}°</span>
                  </div>
                  <div className="flex gap-2 mt-2">
                    <button
